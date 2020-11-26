@@ -1,3 +1,4 @@
+//CLASS that DEFINE USER SCHEMA to STORE in MONGOATLAS
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -15,5 +16,5 @@ password: {type: String, required: true}
 });
 
 
-//coge el schema y lo usa para guardar datos dentro de una colección mongodb.
+//use the SCHEMA to STORE inside collection mongodb.
 module.exports = mongoose.model('User',UserSchema);

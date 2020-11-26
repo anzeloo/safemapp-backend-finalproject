@@ -1,12 +1,12 @@
-//configuración de la db en mongoatlas
+//CLASS whose CONNECT APP with mongoatlas DB
 const mongoose = require('mongoose');
 
-//let url = aquí va la URL que me tira MONGOATLAS
+let url = "mongodb+srv://anzelo:safemapp8@cluster0.w8lvs.mongodb.net/safeMappDB?retryWrites=true&w=majority"
+
+//config
 mongoose.set("useNewUrlParser", true);
 mongoose.set("useUnifiedTopology", true);
-
-//mongoose.connect("aquí va la url de la linea 4");
-
+mongoose.connect(url);
 let db = mongoose.connection;
 db.on("error", console.error.bind(console, "Mongo connection error"));
 

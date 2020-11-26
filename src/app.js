@@ -1,4 +1,5 @@
-//ESTE ES EL SERVIDOR -> usar express e inicializarlo
+//CLASS SERVER -> backend & express config
+//DEFINE, app requirements.
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
@@ -7,33 +8,30 @@ const app = express();
 
 const cors = require('cors');
 var corsOptions = {
-    origin = '*',
+    origin = '*', //here put domain, * -> everybody can access it 
     optionSuccessStatus = 200
 }
 app.use(cors(corsOptions));
-
-
-//settings -> toma el puerto del SO
+//app takes SO PORT
 app.set('port', process.env.PORT || 3000);
 
-//middlewares -> función que se ejecuta antes de llegar a las rutas.
-//aquí, usamos morgan para mostrarlos por consola
-//urlencoded -> entiende datos que inserta un user a través de un form. 
-app.use(morgan('dev')); 
+
+//USE, all of that is execute before routes (Middlewares)
+app.use(morgan('dev')); //morgan, to show info in console.
 app.use(express.json());
-app.use(express.urlencoded({extended:false}));
+app.use(express.urlencoded({extended:false})); //urlencoded, entiende datos que entran por un form.
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-//import & use routes -> los 2 archivos del folder routes
+//import & use routes -> 2 files in routes folder
 const indexRoutes = require('./routes/index');
 const usersRoutes = require('./routes/users');
 app.use('/', indexRoutes);
 app.use('/users', usersRoutes);
 
 
-//starting the server 
+//STARTING the server 
 app.listen(app.get('port') , () => {
     console.log(`Server is listening in ${app.get('port')}`);
 }) 
