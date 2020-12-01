@@ -8,8 +8,8 @@ const app = express();
 
 const cors = require('cors');
 var corsOptions = {
-    origin = '*', //here put domain, * -> everybody can access it 
-    optionSuccessStatus = 200
+    origin: '*', 
+    optionsSuccessStatus:200
 }
 app.use(cors(corsOptions));
 //app takes SO PORT
@@ -31,6 +31,7 @@ app.use('/', indexRoutes);
 app.use('/users', usersRoutes);
 
 
+//npm start to run backend-
 //STARTING the server 
 app.listen(app.get('port') , () => {
     console.log(`Server is listening in ${app.get('port')}`);
