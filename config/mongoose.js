@@ -1,7 +1,7 @@
 //CLASS whose CONNECT APP with mongoatlas DB
 const mongoose = require('mongoose');
 
-let url = "mongodb+srv://anzelo:safemapp8@cluster0.w8lvs.mongodb.net/safeMappDB?retryWrites=true&w=majority"
+let url = "mongodb+srv://anzelo:lmpvSajqPSFlVkKF@cluster0.w8lvs.mongodb.net/safemapp?retryWrites=true&w=majority";
 
 //config
 mongoose.set("useNewUrlParser", true);

@@ -2,12 +2,11 @@
 const User = require('../src/models/user');
 
 //GET ALL
-exports.index = function(req, res, next){
-    User.find({},(err, users) => {
-        if(err){
+exports.index = function(req, res, next) {
+    User.find({}, (err, users) => {
+        if (err) {
             return next(err);
-        }
-        else{
+        } else {
             res.send(users);
         }
     })

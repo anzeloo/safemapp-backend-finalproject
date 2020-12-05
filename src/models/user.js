@@ -12,7 +12,8 @@ gender: {type: String, required: true},
 age: {type: Number, required: true},
 neighborhood: {type: String, required: true},
 email: {type: String, required: true},
-password: {type: String, required: true}
+password: {type: String, required: true},
+
 });
 
 
