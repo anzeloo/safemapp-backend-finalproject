@@ -21,7 +21,6 @@ exports.create = function(req, res, next){
         description: req.body.description,
         calification: req.body.calification,
         color: req.body.color,
-        level: req.body.level,
         latlng: req.body.latlng 
     });
     zone.save(err => {

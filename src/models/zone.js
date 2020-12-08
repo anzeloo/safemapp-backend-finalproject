@@ -8,7 +8,6 @@ const ZoneSchema = new Schema({
     description: {type: String, required: true },
     calification: {type: String, required:true},
     color: {type: String, required: true},
-    level: {type: String, required: true},
     latlng: [[]]
 })
 
